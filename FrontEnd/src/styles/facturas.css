@@ -1,0 +1,480 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   APPRESSO — FACTURAS HISTORY STYLES (LIGHT THEME)
+   ========================================================================== */
+
+/* Page Container */
+.facturas-page {
+  @apply space-y-6;
+}
+
+/* Header */
+.facturas-header {
+  @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4;
+}
+
+.facturas-header__info {
+  @apply flex-1;
+}
+
+.facturas-breadcrumb {
+  @apply flex items-center gap-2 text-xs mb-1;
+  color: var(--text-muted);
+}
+
+.facturas-breadcrumb__link {
+  color: var(--text-muted);
+  transition: color 0.15s ease-in-out;
+}
+
+.facturas-breadcrumb__link:hover {
+  color: var(--brand-primary);
+}
+
+.facturas-breadcrumb__separator {
+  color: var(--text-light);
+}
+
+.facturas-breadcrumb__current {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.facturas-header__title {
+  @apply text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center gap-3;
+  color: var(--text-primary);
+}
+
+.facturas-header__icon {
+  @apply w-8 h-8 shrink-0;
+  color: var(--brand-primary);
+}
+
+.facturas-header__desc {
+  @apply text-xs sm:text-sm mt-1;
+  color: var(--text-muted);
+}
+
+.facturas-header__actions {
+  @apply flex items-center gap-3 shrink-0;
+}
+
+.facturas-header__nav-btn {
+  @apply flex items-center gap-2 px-3.5 py-2 font-semibold text-xs transition-all duration-200;
+  background-color: var(--bg-white);
+  color: var(--brand-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.facturas-header__nav-btn:hover {
+  background-color: var(--brand-secondary-bg);
+  border-color: var(--brand-secondary-light);
+  color: var(--brand-secondary);
+}
+
+.facturas-header__nav-btn-icon {
+  @apply w-3.5 h-3.5 shrink-0;
+  color: var(--brand-secondary-mid);
+}
+
+.facturas-header__reload-btn {
+  @apply p-2.5 transition-all duration-200;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  box-shadow: var(--shadow-xs);
+}
+
+.facturas-header__reload-btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--brand-secondary);
+  border-color: var(--border-hover);
+}
+
+.facturas-header__reload-icon {
+  @apply w-4 h-4;
+}
+
+/* Search and Filters Bar */
+.facturas-search-bar {
+  @apply flex items-center gap-4 p-4;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.facturas-search-bar__input-wrapper {
+  @apply relative flex-1;
+}
+
+.facturas-search-bar__icon {
+  @apply absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4;
+  color: var(--text-light);
+}
+
+.facturas-search-bar__input {
+  @apply w-full pl-10 pr-4 py-2 text-sm transition-colors;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+}
+
+.facturas-search-bar__input::placeholder {
+  color: var(--text-light);
+}
+
+.facturas-search-bar__input:focus {
+  outline: none;
+  background-color: var(--bg-white);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.facturas-search-bar__count {
+  @apply text-xs shrink-0;
+  color: var(--text-muted);
+}
+
+.facturas-search-bar__count-strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Table Section */
+.facturas-table-wrapper {
+  @apply overflow-x-auto;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.facturas-table {
+  @apply w-full text-left text-xs;
+}
+
+.facturas-table__head {
+  @apply uppercase tracking-wider font-semibold;
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.facturas-table__th {
+  @apply py-3.5 px-4;
+}
+
+.facturas-table__th--right {
+  @apply text-right;
+}
+
+.facturas-table__body {
+  border-color: var(--border);
+}
+
+.facturas-table__row {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.facturas-table__row:hover {
+  background-color: var(--bg-hover);
+}
+
+.facturas-table__td {
+  @apply py-3.5 px-4;
+  color: var(--text-secondary);
+}
+
+.facturas-table__td--invoice {
+  @apply font-mono font-bold;
+  color: var(--brand-primary-dark);
+}
+
+.facturas-table__td--user {
+  color: var(--text-secondary);
+}
+
+.facturas-table__user-label {
+  @apply font-semibold;
+  color: var(--text-primary);
+}
+
+.facturas-table__tx-link {
+  @apply inline-flex items-center gap-1 font-mono transition-colors;
+  color: var(--brand-secondary-mid);
+}
+
+.facturas-table__tx-link:hover {
+  color: var(--brand-secondary);
+  text-decoration: underline;
+}
+
+.facturas-table__tx-link-icon {
+  @apply w-3 h-3;
+}
+
+.facturas-table__td--muted {
+  color: var(--text-muted);
+}
+
+.facturas-table__td--total {
+  @apply font-bold;
+  color: var(--text-primary);
+}
+
+.facturas-table__td--right {
+  @apply text-right;
+}
+
+.facturas-table__action-btn {
+  @apply p-2 transition-colors;
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+}
+
+.facturas-table__action-btn:hover {
+  color: var(--brand-primary);
+  background-color: var(--brand-primary-bg);
+}
+
+.facturas-table__action-icon {
+  @apply w-4 h-4;
+}
+
+/* Invoice Detail Modal */
+.facturas-modal-backdrop {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.facturas-modal {
+  @apply w-full max-w-xl p-6 sm:p-8 space-y-6;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.facturas-modal__header {
+  @apply flex items-center justify-between pb-4;
+  border-bottom: 1px solid var(--border);
+}
+
+.facturas-modal__number {
+  @apply text-xs font-mono font-bold block;
+  color: var(--brand-primary);
+}
+
+.facturas-modal__title {
+  @apply text-lg font-bold;
+  color: var(--text-primary);
+}
+
+.facturas-modal__close-btn {
+  @apply p-1.5 transition-colors;
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+}
+
+.facturas-modal__close-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-hover);
+}
+
+.facturas-modal__close-icon {
+  @apply w-5 h-5;
+}
+
+/* Modal Metadata Grid */
+.facturas-modal__meta-grid {
+  @apply grid grid-cols-2 sm:grid-cols-3 gap-3 p-3.5 text-xs;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.facturas-modal__meta-item {
+  @apply space-y-0.5;
+}
+
+.facturas-modal__meta-item--full {
+  @apply col-span-2 sm:col-span-3;
+}
+
+.facturas-modal__meta-label {
+  @apply block text-[11px];
+  color: var(--text-muted);
+}
+
+.facturas-modal__meta-value {
+  @apply font-mono font-medium;
+  color: var(--text-primary);
+}
+
+.facturas-modal__meta-value--link {
+  color: var(--brand-secondary-mid);
+}
+
+.facturas-modal__meta-value--text {
+  color: var(--text-secondary);
+}
+
+/* Modal Items Table */
+.facturas-modal__section-title {
+  @apply text-xs font-bold uppercase tracking-wider mb-2;
+  color: var(--text-muted);
+}
+
+.facturas-modal__items-table-wrapper {
+  @apply overflow-hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.facturas-modal__items-table {
+  @apply w-full text-left text-xs;
+}
+
+.facturas-modal__items-thead {
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.facturas-modal__items-th {
+  @apply py-2.5 px-3 font-semibold;
+}
+
+.facturas-modal__items-th--center {
+  @apply text-center;
+}
+
+.facturas-modal__items-th--right {
+  @apply text-right;
+}
+
+.facturas-modal__items-tbody {
+  background-color: var(--bg-white);
+}
+
+.facturas-modal__items-tbody tr {
+  border-bottom: 1px solid var(--border);
+}
+
+.facturas-modal__items-tbody tr:last-child {
+  border-bottom: none;
+}
+
+.facturas-modal__items-td {
+  @apply py-2.5 px-3;
+  color: var(--text-secondary);
+}
+
+.facturas-modal__items-td--name {
+  @apply font-medium;
+  color: var(--text-primary);
+}
+
+.facturas-modal__items-td--center {
+  @apply text-center;
+}
+
+.facturas-modal__items-td--right {
+  @apply text-right;
+}
+
+.facturas-modal__items-td--bold {
+  @apply font-semibold;
+  color: var(--text-primary);
+}
+
+/* Modal Totals */
+.facturas-modal__totals {
+  @apply p-4 space-y-2 text-xs;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.facturas-modal__totals-row {
+  @apply flex justify-between;
+  color: var(--text-muted);
+}
+
+.facturas-modal__totals-val {
+  @apply font-medium;
+  color: var(--text-primary);
+}
+
+.facturas-modal__totals-final {
+  @apply flex justify-between text-base font-bold pt-2;
+  border-top: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.facturas-modal__totals-final-amount {
+  color: var(--status-success);
+}
+
+/* Modal Footer & Status Actions */
+.facturas-modal__footer {
+  @apply flex flex-col sm:flex-row items-center justify-between gap-3 pt-2;
+}
+
+.facturas-modal__status-group {
+  @apply flex items-center gap-2;
+}
+
+.facturas-modal__status-label {
+  @apply text-xs;
+  color: var(--text-muted);
+}
+
+.facturas-modal__btn-status {
+  @apply px-2.5 py-1 text-xs font-semibold transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  border-radius: var(--radius-md);
+}
+
+.facturas-modal__btn-status--pagada {
+  background-color: var(--status-success-bg);
+  color: var(--status-success);
+  border: 1px solid var(--status-success-border);
+}
+
+.facturas-modal__btn-status--pagada:hover:not(:disabled) {
+  background-color: #d1fae5;
+}
+
+.facturas-modal__btn-status--anulada {
+  background-color: var(--status-error-bg);
+  color: var(--status-error);
+  border: 1px solid var(--status-error-border);
+}
+
+.facturas-modal__btn-status--anulada:hover:not(:disabled) {
+  background-color: #fee2e2;
+}
+
+.facturas-modal__btn-close {
+  @apply px-4 py-2 text-xs font-semibold transition-colors;
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.facturas-modal__btn-close:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}

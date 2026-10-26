@@ -1,0 +1,428 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   Products Manage Page — APPRESSO Light Theme
+   ========================================================================== */
+
+.products-page {
+  @apply space-y-6;
+}
+
+/* ─── Header & Breadcrumbs ─── */
+.products-page__header {
+  @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4;
+}
+
+.products-page__breadcrumbs {
+  @apply flex items-center gap-2 text-xs mb-1;
+  color: var(--text-muted);
+}
+
+.products-page__breadcrumb-link {
+  @apply transition-colors duration-150;
+  color: var(--text-muted);
+}
+
+.products-page__breadcrumb-link:hover {
+  color: var(--brand-primary);
+}
+
+.products-page__breadcrumb-sep {
+  color: var(--text-light);
+}
+
+.products-page__breadcrumb-current {
+  @apply font-medium;
+  color: var(--text-secondary);
+}
+
+.products-page__title {
+  @apply text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center gap-3;
+  color: var(--text-primary);
+}
+
+.products-page__title-icon {
+  @apply w-8 h-8 shrink-0;
+  color: var(--brand-primary);
+}
+
+.products-page__subtitle {
+  @apply text-xs sm:text-sm mt-1;
+  color: var(--text-muted);
+}
+
+/* Header Actions */
+.products-page__actions {
+  @apply flex items-center gap-3;
+}
+
+.products-page__btn-refresh {
+  @apply p-2.5 rounded-xl transition-colors duration-150 cursor-pointer;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  box-shadow: var(--shadow-xs);
+}
+
+.products-page__btn-refresh:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.products-page__btn-primary {
+  @apply flex items-center gap-2 px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm transition-all duration-150 cursor-pointer;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.products-page__btn-primary:hover {
+  background-color: var(--brand-primary-dark);
+  transform: translateY(-1px);
+}
+
+.products-page__btn-primary:active {
+  transform: translateY(0);
+}
+
+.products-page__btn-icon {
+  @apply w-4 h-4;
+}
+
+/* ─── Search Bar ─── */
+.products-page__search-bar {
+  @apply flex items-center gap-4 p-4 rounded-2xl;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+.products-page__search-wrapper {
+  @apply relative flex-1;
+}
+
+.products-page__search-icon {
+  @apply absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4;
+  color: var(--text-light);
+}
+
+.products-page__search-input {
+  @apply w-full pl-10 pr-4 py-2 rounded-xl text-sm transition-colors;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.products-page__search-input::placeholder {
+  color: var(--text-light);
+}
+
+.products-page__search-input:focus {
+  @apply outline-none;
+  background-color: var(--bg-white);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px var(--brand-primary-bg);
+}
+
+.products-page__search-count {
+  @apply text-xs shrink-0;
+  color: var(--text-muted);
+}
+
+.products-page__search-count-highlight {
+  @apply font-bold;
+  color: var(--text-primary);
+}
+
+/* ─── Products Table ─── */
+.products-table__wrapper {
+  @apply overflow-x-auto rounded-2xl;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.products-table {
+  @apply w-full text-left text-xs;
+}
+
+.products-table__thead {
+  @apply uppercase tracking-wider font-semibold;
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.products-table__th {
+  @apply py-3.5 px-4 font-semibold;
+}
+
+.products-table__th--right {
+  @apply text-right;
+}
+
+.products-table__tbody {
+  @apply divide-y;
+  border-color: var(--border);
+}
+
+.products-table__row {
+  @apply transition-colors duration-150;
+  border-color: var(--border);
+}
+
+.products-table__row:hover {
+  background-color: var(--bg-hover);
+}
+
+.products-table__cell {
+  @apply py-3.5 px-4 align-middle;
+  color: var(--text-secondary);
+}
+
+.products-table__cell--id {
+  @apply font-mono text-xs;
+  color: var(--text-muted);
+}
+
+.products-table__cell--name-desc {
+  @apply max-w-xs;
+}
+
+.products-table__cell-name {
+  @apply font-semibold text-sm;
+  color: var(--text-primary);
+}
+
+.products-table__cell-desc {
+  @apply text-xs truncate max-w-xs;
+  color: var(--text-muted);
+}
+
+.products-table__subcat-pill {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-md text-xs font-medium;
+  background-color: var(--brand-secondary-bg);
+  color: var(--brand-secondary);
+  border: 1px solid var(--brand-secondary-pale);
+}
+
+.products-table__subcat-icon {
+  @apply w-3 h-3;
+  color: var(--brand-secondary-mid);
+}
+
+.products-table__cell--price {
+  @apply font-semibold font-mono text-sm;
+  color: var(--text-primary);
+}
+
+/* Stock Badges */
+.products-table__stock {
+  @apply font-semibold text-xs;
+}
+
+.products-table__stock--ok {
+  color: var(--status-success);
+}
+
+.products-table__stock--warning {
+  color: var(--status-warning);
+}
+
+.products-table__stock--danger {
+  color: var(--status-error);
+}
+
+/* Status Active / Inactive Button */
+.products-table__status-btn {
+  @apply inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-medium transition-colors cursor-pointer text-xs;
+}
+
+.products-table__status-btn--active {
+  background-color: var(--status-success-bg);
+  color: var(--status-success);
+  border: 1px solid var(--status-success-border);
+}
+
+.products-table__status-btn--active:hover {
+  background-color: #d1fae5;
+}
+
+.products-table__status-btn--inactive {
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border: 1px solid var(--border);
+}
+
+.products-table__status-btn--inactive:hover {
+  background-color: var(--bg-muted);
+}
+
+.products-table__status-icon {
+  @apply w-3 h-3;
+}
+
+/* Row Action Buttons */
+.products-table__cell--actions {
+  @apply text-right;
+}
+
+.products-table__action-btn {
+  @apply p-2 rounded-lg transition-colors cursor-pointer inline-flex items-center justify-center;
+  color: var(--text-muted);
+}
+
+.products-table__action-btn:hover {
+  background-color: var(--brand-primary-bg);
+  color: var(--brand-primary);
+}
+
+.products-table__action-icon {
+  @apply w-4 h-4;
+}
+
+/* ─── Empty State Button ─── */
+.products-page__empty-btn {
+  @apply px-4 py-2 font-bold rounded-xl text-xs transition-colors cursor-pointer;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.products-page__empty-btn:hover {
+  background-color: var(--brand-primary-dark);
+}
+
+/* ─── Product Create/Edit Modal ─── */
+.product-modal__backdrop {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.product-modal__dialog {
+  @apply w-full max-w-lg rounded-3xl p-6 sm:p-8 space-y-6;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.25s ease-out forwards;
+}
+
+.product-modal__header {
+  @apply flex items-center justify-between pb-4;
+  border-bottom: 1px solid var(--border);
+}
+
+.product-modal__title {
+  @apply text-lg font-bold flex items-center gap-2;
+  color: var(--text-primary);
+}
+
+.product-modal__title-icon {
+  @apply w-5 h-5;
+  color: var(--brand-primary);
+}
+
+.product-modal__close-btn {
+  @apply p-1.5 rounded-lg transition-colors cursor-pointer;
+  color: var(--text-muted);
+}
+
+.product-modal__close-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.product-modal__close-icon {
+  @apply w-5 h-5;
+}
+
+.product-modal__form {
+  @apply space-y-4 text-xs;
+}
+
+.product-modal__form-group {
+  @apply space-y-1;
+}
+
+.product-modal__form-row {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.product-modal__label {
+  @apply font-medium block text-xs;
+  color: var(--text-secondary);
+}
+
+.product-modal__input,
+.product-modal__select,
+.product-modal__textarea {
+  @apply w-full px-3.5 py-2.5 rounded-xl text-sm transition-colors;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.product-modal__input::placeholder,
+.product-modal__textarea::placeholder {
+  color: var(--text-light);
+}
+
+.product-modal__input:focus,
+.product-modal__select:focus,
+.product-modal__textarea:focus {
+  @apply outline-none;
+  background-color: var(--bg-white);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px var(--brand-primary-bg);
+}
+
+.product-modal__input--mono {
+  @apply font-mono;
+}
+
+.product-modal__checkbox-row {
+  @apply flex items-center gap-3 pt-2;
+}
+
+.product-modal__checkbox {
+  @apply w-4 h-4 rounded cursor-pointer;
+  accent-color: var(--brand-primary);
+  border: 1px solid var(--border);
+}
+
+.product-modal__checkbox-label {
+  @apply font-medium cursor-pointer text-xs select-none;
+  color: var(--text-secondary);
+}
+
+.product-modal__footer {
+  @apply flex items-center justify-end gap-3 pt-4;
+  border-top: 1px solid var(--border);
+}
+
+.product-modal__btn-cancel {
+  @apply px-4 py-2.5 rounded-xl font-semibold transition-colors cursor-pointer text-xs;
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.product-modal__btn-cancel:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.product-modal__btn-submit {
+  @apply px-5 py-2.5 rounded-xl font-bold transition-all cursor-pointer text-xs disabled:opacity-50 disabled:cursor-not-allowed;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.product-modal__btn-submit:hover:not(:disabled) {
+  background-color: var(--brand-primary-dark);
+  transform: translateY(-1px);
+}

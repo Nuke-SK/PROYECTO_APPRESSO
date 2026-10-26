@@ -1,0 +1,58 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   APPRESSO — NOT FOUND PAGE STYLES (LIGHT THEME)
+   ========================================================================== */
+
+.notfound-page {
+  @apply min-h-[60vh] flex flex-col items-center justify-center text-center px-4 space-y-4;
+}
+
+.notfound-page__icon-wrap {
+  @apply w-16 h-16 flex items-center justify-center;
+  background-color: var(--brand-primary-bg);
+  border: 1px solid var(--brand-primary-border);
+  border-radius: var(--radius-xl);
+  color: var(--brand-primary);
+  box-shadow: var(--shadow-xs);
+}
+
+.notfound-page__icon {
+  @apply w-8 h-8;
+}
+
+.notfound-page__code {
+  @apply text-5xl font-extrabold tracking-tight;
+  color: var(--brand-secondary);
+}
+
+.notfound-page__title {
+  @apply text-xl font-bold;
+  color: var(--text-primary);
+}
+
+.notfound-page__desc {
+  @apply text-sm max-w-sm leading-relaxed;
+  color: var(--text-muted);
+}
+
+.notfound-page__btn {
+  @apply inline-flex items-center gap-2 px-5 py-2.5 font-bold text-xs transition-all duration-200;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-brand);
+}
+
+.notfound-page__btn:hover {
+  background-color: var(--brand-primary-dark);
+  transform: translateY(-1px);
+}
+
+.notfound-page__btn:active {
+  transform: translateY(0);
+}
+
+.notfound-page__btn-icon {
+  @apply w-4 h-4;
+}

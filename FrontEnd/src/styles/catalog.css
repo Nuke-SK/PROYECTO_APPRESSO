@@ -1,0 +1,356 @@
+@reference "tailwindcss";
+
+/* ╔══════════════════════════════════════════════════════════╗
+   ║  APPRESSO — CATALOG STYLES (LIGHT THEME)               ║
+   ╚══════════════════════════════════════════════════════════╝ */
+
+/* ─── PAGE CONTAINER ─────────────────────────────────────── */
+.catalog-page {
+  @apply space-y-8;
+}
+
+/* ─── HERO BANNER ────────────────────────────────────────── */
+.catalog-hero {
+  @apply relative overflow-hidden rounded-3xl p-8 sm:p-10;
+  background: linear-gradient(135deg, #ffffff 0%, var(--brand-secondary-bg) 60%, var(--brand-primary-bg) 100%);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+
+.catalog-hero__content {
+  @apply relative z-10 max-w-2xl;
+}
+
+.catalog-hero__badge {
+  @apply inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold mb-4;
+  background-color: var(--brand-primary-bg);
+  border: 1px solid var(--brand-primary-border);
+  color: var(--brand-primary-dark);
+}
+
+.catalog-hero__badge-icon {
+  @apply w-3.5 h-3.5;
+  color: var(--brand-primary);
+}
+
+.catalog-hero__title {
+  @apply text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight mb-3;
+  color: var(--text-primary);
+}
+
+.catalog-hero__title-accent {
+  background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-primary-dark) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.catalog-hero__desc {
+  @apply text-sm sm:text-base leading-relaxed;
+  color: var(--text-secondary);
+}
+
+.catalog-hero__glow {
+  @apply absolute -right-12 -bottom-12 w-64 h-64 rounded-full blur-3xl pointer-events-none;
+  background-color: rgba(217, 119, 6, 0.15);
+}
+
+/* ─── SEARCH & FILTER TOOLBAR ────────────────────────────── */
+.catalog-toolbar {
+  @apply flex flex-col md:flex-row gap-4 items-center justify-between p-4 rounded-2xl;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.catalog-search {
+  @apply relative w-full md:w-96;
+}
+
+.catalog-search__icon {
+  @apply absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4;
+  color: var(--text-muted);
+}
+
+.catalog-search__input {
+  @apply w-full pl-10 pr-4 py-2 rounded-xl text-sm transition-colors;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.catalog-search__input::placeholder {
+  color: var(--text-light);
+}
+
+.catalog-search__input:focus {
+  @apply outline-none;
+  border-color: var(--brand-primary);
+  background-color: var(--bg-white);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.12);
+}
+
+.catalog-filter-group {
+  @apply flex flex-wrap items-center gap-2 w-full md:w-auto;
+}
+
+.catalog-filter-chip {
+  @apply px-3 py-1.5 rounded-lg text-xs font-medium transition-all;
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.catalog-filter-chip:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.catalog-filter-chip--active {
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  font-weight: 700;
+  border-color: var(--brand-primary);
+  box-shadow: var(--shadow-brand);
+}
+
+.catalog-filter-chip--active:hover {
+  background-color: var(--brand-primary-dark);
+  color: var(--text-inverse);
+}
+
+/* ─── SUBCATEGORY SUB-FILTER ─────────────────────────────── */
+.catalog-subfilter {
+  @apply flex items-center gap-2 overflow-x-auto pb-2 text-xs;
+}
+
+.catalog-subfilter__icon {
+  @apply w-3.5 h-3.5 shrink-0;
+  color: var(--text-muted);
+}
+
+.catalog-subfilter__label {
+  @apply font-medium;
+  color: var(--text-muted);
+}
+
+.catalog-subfilter__chip {
+  @apply px-2.5 py-1 rounded-md transition-all;
+  color: var(--text-muted);
+}
+
+.catalog-subfilter__chip:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-subtle);
+}
+
+.catalog-subfilter__chip--active {
+  background-color: var(--brand-secondary-bg);
+  color: var(--brand-secondary);
+  border: 1px solid var(--brand-secondary-light);
+  font-weight: 600;
+}
+
+/* ─── PRODUCT GRID & CARDS ───────────────────────────────── */
+.catalog-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6;
+}
+
+.catalog-empty-reset-btn {
+  @apply px-4 py-2 font-medium rounded-xl text-sm transition-colors;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.catalog-empty-reset-btn:hover {
+  background-color: var(--brand-primary-dark);
+}
+
+.product-card {
+  @apply relative flex flex-col justify-between rounded-2xl p-5 transition-all duration-300;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xs);
+}
+
+.product-card:hover {
+  border-color: var(--brand-primary-border);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.product-card__header {
+  @apply flex items-center justify-between gap-2 mb-3;
+}
+
+.product-card__category {
+  @apply text-[11px] font-semibold uppercase tracking-wider px-2.5 py-1 rounded-md;
+  color: var(--brand-secondary);
+  background-color: var(--brand-secondary-bg);
+  border: 1px solid var(--brand-secondary-pale);
+}
+
+.product-card__stock {
+  @apply text-[11px] font-medium px-2 py-0.5 rounded-full;
+}
+
+.product-card__stock--in {
+  background-color: var(--status-success-bg);
+  color: var(--status-success);
+  border: 1px solid var(--status-success-border);
+}
+
+.product-card__stock--low {
+  background-color: var(--status-warning-bg);
+  color: var(--status-warning);
+  border: 1px solid var(--status-warning-border);
+}
+
+.product-card__stock--out {
+  background-color: var(--status-error-bg);
+  color: var(--status-error);
+  border: 1px solid var(--status-error-border);
+}
+
+.product-card__media {
+  @apply h-32 rounded-xl flex items-center justify-center transition-colors mb-4;
+  background: linear-gradient(135deg, var(--bg-subtle) 0%, var(--bg-hover) 100%);
+  border: 1px solid var(--border);
+  color: var(--brand-primary);
+}
+
+.product-card:hover .product-card__media {
+  background: var(--brand-primary-bg);
+  border-color: var(--brand-primary-light);
+  color: var(--brand-primary-dark);
+}
+
+.product-card__media-icon {
+  @apply w-12 h-12 stroke-[1.25];
+}
+
+.product-card__body {
+  /* Container for title & desc */
+}
+
+.product-card__title {
+  @apply font-semibold text-base transition-colors line-clamp-1;
+  color: var(--text-primary);
+}
+
+.product-card:hover .product-card__title {
+  color: var(--brand-primary);
+}
+
+.product-card__desc {
+  @apply text-xs line-clamp-2 mt-1.5 leading-relaxed min-h-[2rem];
+  color: var(--text-muted);
+}
+
+.product-card__footer {
+  @apply mt-5 pt-4 flex items-center justify-between gap-3;
+  border-top: 1px solid var(--border);
+}
+
+.product-card__price-wrapper {
+  /* Wraps price label & val */
+}
+
+.product-card__price-label {
+  @apply text-[10px] uppercase tracking-wider block;
+  color: var(--text-muted);
+}
+
+.product-card__price-val {
+  @apply text-lg font-bold tracking-tight;
+  color: var(--text-primary);
+}
+
+.product-card__btn {
+  @apply flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all;
+}
+
+.product-card__btn--add {
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.product-card__btn--add:hover {
+  background-color: var(--brand-primary-dark);
+}
+
+.product-card__btn--add:active {
+  transform: scale(0.95);
+}
+
+.product-card__btn--in-cart {
+  background-color: var(--status-success-bg);
+  color: var(--status-success);
+  border: 1px solid var(--status-success-border);
+}
+
+.product-card__btn--in-cart:hover {
+  background-color: #d1fae5;
+}
+
+.product-card__btn--disabled {
+  background-color: var(--bg-muted);
+  color: var(--text-light);
+  cursor: not-allowed;
+  border: 1px solid var(--border);
+}
+
+.product-card__btn-icon {
+  @apply w-3.5 h-3.5;
+}
+
+/* ─── FLOATING CHECKOUT CTA ──────────────────────────────── */
+.catalog-floating-cta {
+  @apply fixed bottom-6 left-1/2 -translate-x-1/2 z-30 w-full max-w-lg px-4;
+  animation: slideUp 0.35s ease-out forwards;
+}
+
+.catalog-floating-cta__card {
+  @apply p-4 rounded-2xl flex items-center justify-between gap-4 backdrop-blur-xl;
+  background-color: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--brand-primary-border);
+  box-shadow: var(--shadow-xl);
+}
+
+.catalog-floating-cta__info {
+  /* wrapper */
+}
+
+.catalog-floating-cta__label {
+  @apply text-xs;
+  color: var(--text-muted);
+}
+
+.catalog-floating-cta__total {
+  @apply text-base font-bold;
+  color: var(--brand-primary-dark);
+}
+
+.catalog-floating-cta__count {
+  @apply text-xs font-normal;
+  color: var(--text-muted);
+}
+
+.catalog-floating-cta__btn {
+  @apply px-5 py-2.5 rounded-xl font-bold text-sm transition-all;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.catalog-floating-cta__btn:hover {
+  background-color: var(--brand-primary-dark);
+  transform: scale(1.03);
+}
+
+.catalog-floating-cta__btn:active {
+  transform: scale(0.97);
+}

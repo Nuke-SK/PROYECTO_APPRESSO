@@ -1,0 +1,393 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   Categories Manage Page — APPRESSO Light Theme
+   ========================================================================== */
+
+.categories-page {
+  @apply space-y-6;
+}
+
+/* ─── Header & Breadcrumbs ─── */
+.categories-page__header {
+  @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4;
+}
+
+.categories-page__breadcrumbs {
+  @apply flex items-center gap-2 text-xs mb-1;
+  color: var(--text-muted);
+}
+
+.categories-page__breadcrumb-link {
+  @apply transition-colors duration-150;
+  color: var(--text-muted);
+}
+
+.categories-page__breadcrumb-link:hover {
+  color: var(--brand-primary);
+}
+
+.categories-page__breadcrumb-sep {
+  color: var(--text-light);
+}
+
+.categories-page__breadcrumb-current {
+  @apply font-medium;
+  color: var(--text-secondary);
+}
+
+.categories-page__title {
+  @apply text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center gap-3;
+  color: var(--text-primary);
+}
+
+.categories-page__title-icon {
+  @apply w-8 h-8 shrink-0;
+  color: var(--brand-primary);
+}
+
+.categories-page__subtitle {
+  @apply text-xs sm:text-sm mt-1;
+  color: var(--text-muted);
+}
+
+/* Header Action Buttons */
+.categories-page__actions {
+  @apply flex items-center gap-3;
+}
+
+.categories-page__btn-reload {
+  @apply p-2.5 rounded-xl transition-colors duration-150 cursor-pointer;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  box-shadow: var(--shadow-xs);
+}
+
+.categories-page__btn-reload:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+  border-color: var(--border-hover);
+}
+
+.categories-page__btn-secondary {
+  @apply flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl font-semibold text-xs transition-all duration-150 cursor-pointer;
+  background-color: var(--brand-secondary-bg);
+  color: var(--brand-secondary);
+  border: 1px solid var(--brand-secondary-pale);
+}
+
+.categories-page__btn-secondary:hover {
+  background-color: #e0edfd;
+  color: #172e4c;
+}
+
+.categories-page__btn-primary {
+  @apply flex items-center gap-1.5 px-4 py-2.5 rounded-xl font-bold text-xs transition-all duration-150 cursor-pointer;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.categories-page__btn-primary:hover {
+  background-color: var(--brand-primary-dark);
+  transform: translateY(-1px);
+}
+
+.categories-page__btn-primary:active {
+  transform: translateY(0);
+}
+
+.categories-page__btn-icon {
+  @apply w-4 h-4;
+}
+
+.categories-page__btn-icon--amber {
+  color: var(--brand-primary);
+}
+
+/* ─── Empty Card ─── */
+.categories-page__empty-card {
+  @apply p-8 rounded-2xl text-center;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+}
+
+.categories-page__empty-text {
+  @apply text-sm;
+  color: var(--text-muted);
+}
+
+/* ─── Categories Cards Grid ─── */
+.categories-grid {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-6;
+}
+
+/* Category Parent Card */
+.category-card {
+  @apply rounded-2xl p-5 space-y-4 transition-all duration-200;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.category-card:hover {
+  border-color: var(--brand-primary-border);
+  box-shadow: var(--shadow-md);
+}
+
+.category-card__header {
+  @apply flex items-start justify-between gap-3 pb-3;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-card__info {
+  @apply flex items-center gap-2.5;
+}
+
+.category-card__icon-box {
+  @apply w-9 h-9 rounded-xl flex items-center justify-center shrink-0;
+  background-color: var(--brand-primary-bg);
+  border: 1px solid var(--brand-primary-border);
+  color: var(--brand-primary);
+}
+
+.category-card__icon {
+  @apply w-4 h-4;
+}
+
+.category-card__title-group {
+  @apply space-y-0.5;
+}
+
+.category-card__title {
+  @apply font-bold text-base flex items-center gap-2;
+  color: var(--text-primary);
+}
+
+.category-card__id-badge {
+  @apply text-[10px] font-mono font-normal;
+  color: var(--text-muted);
+}
+
+.category-card__description {
+  @apply text-xs line-clamp-1;
+  color: var(--text-muted);
+}
+
+/* Header Action Buttons */
+.category-card__header-actions {
+  @apply flex items-center gap-1.5;
+}
+
+.category-card__action-btn {
+  @apply p-1.5 rounded-lg transition-colors cursor-pointer inline-flex items-center justify-center;
+  color: var(--text-muted);
+}
+
+.category-card__action-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--brand-primary);
+}
+
+.category-card__action-btn--add {
+  color: var(--brand-primary);
+}
+
+.category-card__action-btn--add:hover {
+  background-color: var(--brand-primary-bg);
+  color: var(--brand-primary-dark);
+}
+
+.category-card__action-icon {
+  @apply w-3.5 h-3.5;
+}
+
+/* ─── Subcategories Section ─── */
+.category-card__subcats-section {
+  @apply space-y-2;
+}
+
+.category-card__subcats-title {
+  @apply text-[11px] font-semibold uppercase tracking-wider block;
+  color: var(--text-muted);
+}
+
+.category-card__subcats-empty {
+  @apply text-xs italic py-2;
+  color: var(--text-light);
+}
+
+.category-card__pills {
+  @apply flex flex-wrap gap-2;
+}
+
+/* Subcategory Pill */
+.category-pill {
+  @apply flex items-center gap-2 px-3 py-1.5 rounded-xl text-xs transition-all duration-150;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+}
+
+.category-pill:hover {
+  background-color: var(--bg-hover);
+  border-color: var(--border-hover);
+  color: var(--text-primary);
+}
+
+.category-pill__icon {
+  @apply w-3 h-3 shrink-0;
+  color: var(--brand-primary);
+}
+
+.category-pill__name {
+  @apply font-medium;
+}
+
+.category-pill__id {
+  @apply text-[10px];
+  color: var(--text-muted);
+}
+
+.category-pill__edit-btn {
+  @apply opacity-0 transition-opacity ml-1 cursor-pointer;
+  color: var(--text-muted);
+}
+
+.category-pill:hover .category-pill__edit-btn {
+  opacity: 1;
+}
+
+.category-pill__edit-btn:hover {
+  color: var(--brand-primary);
+}
+
+.category-pill__edit-icon {
+  @apply w-3 h-3;
+}
+
+/* ─── Modals (Padre & Sub) ─── */
+.category-modal__backdrop {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  background-color: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out forwards;
+}
+
+.category-modal__dialog {
+  @apply w-full max-w-md rounded-2xl p-6 space-y-4;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-xl);
+  animation: slideUp 0.25s ease-out forwards;
+}
+
+.category-modal__header {
+  @apply flex items-center justify-between pb-3;
+  border-bottom: 1px solid var(--border);
+}
+
+.category-modal__title {
+  @apply text-base font-bold flex items-center gap-2;
+  color: var(--text-primary);
+}
+
+.category-modal__title-icon {
+  @apply w-4 h-4;
+  color: var(--brand-primary);
+}
+
+.category-modal__close-btn {
+  @apply p-1.5 rounded-lg transition-colors cursor-pointer;
+  color: var(--text-muted);
+}
+
+.category-modal__close-btn:hover {
+  background-color: var(--bg-subtle);
+  color: var(--text-primary);
+}
+
+.category-modal__close-icon {
+  @apply w-4 h-4;
+}
+
+.category-modal__form {
+  @apply space-y-3.5 text-xs;
+}
+
+.category-modal__form-group {
+  @apply space-y-1;
+}
+
+.category-modal__label {
+  @apply font-medium block text-xs;
+  color: var(--text-secondary);
+}
+
+.category-modal__input,
+.category-modal__select,
+.category-modal__textarea {
+  @apply w-full px-3.5 py-2.5 rounded-xl text-sm transition-colors;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+}
+
+.category-modal__input::placeholder,
+.category-modal__textarea::placeholder {
+  color: var(--text-light);
+}
+
+.category-modal__input:focus,
+.category-modal__select:focus,
+.category-modal__textarea:focus {
+  @apply outline-none;
+  background-color: var(--bg-white);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 2px var(--brand-primary-bg);
+}
+
+.category-modal__checkbox-row {
+  @apply flex items-center gap-2.5 pt-1;
+}
+
+.category-modal__checkbox {
+  @apply w-4 h-4 rounded cursor-pointer;
+  accent-color: var(--brand-primary);
+  border: 1px solid var(--border);
+}
+
+.category-modal__checkbox-label {
+  @apply font-medium cursor-pointer text-xs select-none;
+  color: var(--text-secondary);
+}
+
+.category-modal__footer {
+  @apply flex justify-end gap-2 pt-3;
+  border-top: 1px solid var(--border);
+}
+
+.category-modal__btn-cancel {
+  @apply px-3.5 py-2 rounded-xl font-semibold transition-colors cursor-pointer text-xs;
+  background-color: var(--bg-subtle);
+  color: var(--text-secondary);
+  border: 1px solid var(--border);
+}
+
+.category-modal__btn-cancel:hover {
+  background-color: var(--bg-hover);
+  color: var(--text-primary);
+}
+
+.category-modal__btn-submit {
+  @apply px-4 py-2 rounded-xl font-bold transition-all cursor-pointer text-xs disabled:opacity-50 disabled:cursor-not-allowed;
+  background-color: var(--brand-primary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-brand);
+}
+
+.category-modal__btn-submit:hover:not(:disabled) {
+  background-color: var(--brand-primary-dark);
+  transform: translateY(-1px);
+}

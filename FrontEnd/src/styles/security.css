@@ -1,0 +1,537 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   APPRESSO — SECURITY & ANOMALIES STYLES (LIGHT THEME)
+   ========================================================================== */
+
+/* Page Container */
+.security-page {
+  @apply space-y-6;
+}
+
+/* Header */
+.security-header {
+  @apply flex flex-col sm:flex-row sm:items-center justify-between gap-4;
+}
+
+.security-header__info {
+  @apply flex-1;
+}
+
+.security-breadcrumb {
+  @apply flex items-center gap-2 text-xs mb-1;
+  color: var(--text-muted);
+}
+
+.security-breadcrumb__link {
+  color: var(--text-muted);
+  transition: color 0.15s ease-in-out;
+}
+
+.security-breadcrumb__link:hover {
+  color: var(--brand-primary);
+}
+
+.security-breadcrumb__sep {
+  color: var(--text-light);
+}
+
+.security-breadcrumb__current {
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.security-header__title {
+  @apply text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center gap-3;
+  color: var(--text-primary);
+}
+
+.security-header__icon {
+  @apply w-8 h-8 shrink-0;
+  color: var(--status-error);
+}
+
+.security-header__desc {
+  @apply text-xs sm:text-sm mt-1;
+  color: var(--text-muted);
+}
+
+.security-header__actions {
+  @apply flex items-center gap-3 shrink-0;
+}
+
+.security-header__reload-btn {
+  @apply p-2.5 transition-all duration-200;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-muted);
+  box-shadow: var(--shadow-xs);
+}
+
+.security-header__reload-btn:hover {
+  background-color: var(--bg-hover);
+  color: var(--brand-secondary);
+  border-color: var(--border-hover);
+}
+
+.security-header__reload-icon {
+  @apply w-4 h-4;
+}
+
+/* Metrics Stat Cards Row */
+.security-metrics-grid {
+  @apply grid grid-cols-1 sm:grid-cols-3 gap-5;
+}
+
+/* Sliding Window Explanation Card */
+.security-window-card {
+  @apply p-4 flex items-start gap-3.5 text-xs;
+  background-color: var(--brand-secondary-bg);
+  border: 1px solid var(--brand-secondary-pale);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xs);
+}
+
+.security-window-card__icon-wrap {
+  @apply p-2 rounded-xl shrink-0 mt-0.5;
+  background-color: var(--brand-secondary-pale);
+  border: 1px solid rgba(74, 111, 165, 0.25);
+  color: var(--brand-secondary);
+}
+
+.security-window-card__icon {
+  @apply w-4 h-4;
+}
+
+.security-window-card__content {
+  @apply space-y-1;
+}
+
+.security-window-card__title {
+  @apply font-semibold;
+  color: var(--brand-secondary);
+}
+
+.security-window-card__desc {
+  @apply leading-relaxed;
+  color: var(--text-secondary);
+}
+
+/* Search Bar */
+.security-search-bar {
+  @apply flex items-center gap-4 p-4;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.security-search-bar__input-wrapper {
+  @apply relative flex-1;
+}
+
+.security-search-bar__icon {
+  @apply absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4;
+  color: var(--text-light);
+}
+
+.security-search-bar__input {
+  @apply w-full pl-10 pr-4 py-2 text-sm transition-colors;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  color: var(--text-primary);
+}
+
+.security-search-bar__input::placeholder {
+  color: var(--text-light);
+}
+
+.security-search-bar__input:focus {
+  outline: none;
+  background-color: var(--bg-white);
+  border-color: var(--brand-primary);
+  box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.1);
+}
+
+.security-search-bar__count {
+  @apply text-xs shrink-0;
+  color: var(--text-muted);
+}
+
+.security-search-bar__count-strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* Anomalies Table Section */
+.security-table-wrapper {
+  @apply overflow-x-auto;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.security-table {
+  @apply w-full text-left text-xs;
+}
+
+.security-table__head {
+  @apply uppercase tracking-wider font-semibold;
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.security-table__th {
+  @apply py-3.5 px-4;
+}
+
+.security-table__th--right {
+  @apply text-right;
+}
+
+.security-table__body {
+  border-color: var(--border);
+}
+
+.security-table__row {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.security-table__row:hover {
+  background-color: var(--bg-hover);
+}
+
+.security-table__td {
+  @apply py-3.5 px-4;
+  color: var(--text-secondary);
+}
+
+.security-table__td--id {
+  @apply font-mono font-bold;
+  color: var(--status-error);
+}
+
+.security-table__td--root {
+  @apply font-mono font-semibold;
+}
+
+.security-table__root-link {
+  color: var(--brand-secondary-mid);
+  transition: color 0.15s;
+}
+
+.security-table__root-link:hover {
+  color: var(--brand-secondary);
+  text-decoration: underline;
+}
+
+.security-table__td--type {
+  @apply font-medium;
+  color: var(--text-primary);
+}
+
+.security-table__td--window {
+  @apply font-mono;
+  color: var(--text-secondary);
+}
+
+.security-table__burst-badge {
+  @apply font-semibold px-2.5 py-1 text-xs;
+  background-color: var(--status-error-bg);
+  border: 1px solid var(--status-error-border);
+  border-radius: var(--radius-sm);
+  color: var(--status-error);
+}
+
+.security-table__td--date {
+  color: var(--text-muted);
+}
+
+.security-table__td--right {
+  @apply text-right;
+}
+
+.security-table__action-btn {
+  @apply p-2 transition-colors;
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+}
+
+.security-table__action-btn:hover {
+  color: var(--status-error);
+  background-color: var(--status-error-bg);
+}
+
+.security-table__action-icon {
+  @apply w-4 h-4;
+}
+
+/* Forensic Detail Modal */
+.security-modal-backdrop {
+  @apply fixed inset-0 z-50 flex items-center justify-center p-4;
+  background-color: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(4px);
+  animation: fadeIn 0.2s ease-out;
+}
+
+.security-modal {
+  @apply w-full max-w-2xl p-6 sm:p-8 space-y-6;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-2xl);
+  box-shadow: var(--shadow-xl);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.security-modal__header {
+  @apply flex items-center justify-between pb-4;
+  border-bottom: 1px solid var(--border);
+}
+
+.security-modal__header-left {
+  @apply flex items-center gap-2.5;
+}
+
+.security-modal__icon-wrap {
+  @apply p-2 rounded-xl;
+  background-color: var(--status-error-bg);
+  border: 1px solid var(--status-error-border);
+  color: var(--status-error);
+}
+
+.security-modal__icon {
+  @apply w-6 h-6;
+}
+
+.security-modal__title {
+  @apply text-lg font-bold;
+  color: var(--text-primary);
+}
+
+.security-modal__subtitle {
+  @apply text-xs;
+  color: var(--text-muted);
+}
+
+.security-modal__close-btn {
+  @apply p-1.5 transition-colors;
+  color: var(--text-muted);
+  border-radius: var(--radius-md);
+}
+
+.security-modal__close-btn:hover {
+  color: var(--text-primary);
+  background-color: var(--bg-hover);
+}
+
+.security-modal__close-icon {
+  @apply w-5 h-5;
+}
+
+/* Forensic Metric Chips */
+.security-modal__chips-grid {
+  @apply grid grid-cols-2 sm:grid-cols-4 gap-3 p-3.5 text-xs;
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.security-modal__chip {
+  @apply space-y-0.5;
+}
+
+.security-modal__chip-label {
+  @apply block text-[11px];
+  color: var(--text-muted);
+}
+
+.security-modal__chip-value {
+  @apply font-semibold font-mono;
+  color: var(--text-primary);
+}
+
+.security-modal__chip-value--rose {
+  color: var(--status-error);
+}
+
+.security-modal__chip-value--sky {
+  color: var(--brand-secondary-mid);
+}
+
+/* Forensic Involucradas Table */
+.security-modal__section {
+  @apply space-y-2;
+}
+
+.security-modal__section-title {
+  @apply text-xs font-bold uppercase tracking-wider;
+  color: var(--text-muted);
+}
+
+.security-modal__empty-text {
+  @apply text-xs italic py-2;
+  color: var(--text-muted);
+}
+
+.security-modal__table-wrapper {
+  @apply overflow-hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.security-modal__table {
+  @apply w-full text-left text-xs;
+}
+
+.security-modal__table-head {
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.security-modal__table-th {
+  @apply py-2.5 px-3 font-semibold;
+}
+
+.security-modal__table-body {
+  background-color: var(--bg-white);
+}
+
+.security-modal__table-row {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.security-modal__table-row:last-child {
+  border-bottom: none;
+}
+
+.security-modal__table-row:hover {
+  background-color: var(--bg-hover);
+}
+
+.security-modal__table-td {
+  @apply py-2 px-3;
+  color: var(--text-secondary);
+}
+
+.security-modal__table-td--tx {
+  @apply font-mono font-bold;
+  color: var(--brand-secondary-mid);
+}
+
+.security-modal__table-td--user {
+  color: var(--text-secondary);
+}
+
+.security-modal__table-td--invoice {
+  @apply font-mono font-semibold;
+  color: var(--brand-primary-dark);
+}
+
+.security-modal__table-td--date {
+  @apply text-[11px];
+  color: var(--text-muted);
+}
+
+/* Forensic Footer */
+.security-modal__footer {
+  @apply flex justify-end pt-2;
+}
+
+.security-modal__btn-close {
+  @apply px-5 py-2.5 text-xs font-semibold transition-colors;
+  background-color: var(--brand-secondary);
+  color: var(--text-inverse);
+  border-radius: var(--radius-lg);
+}
+
+.security-modal__btn-close:hover {
+  background-color: var(--brand-secondary-mid);
+}
+
+/* --- SECURITY CONFIG PANEL --------------------------------- */
+.security-config-panel {
+  @apply rounded-2xl p-6 transition-all;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.security-config-panel__header {
+  @apply flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 mb-4 border-b;
+  border-color: var(--border);
+}
+
+.security-config-panel__title {
+  @apply text-base font-bold flex items-center gap-2;
+  color: var(--text-primary);
+}
+
+.security-config-panel__desc {
+  @apply text-xs mt-1;
+  color: var(--text-muted);
+}
+
+.security-config-panel__btn-simular {
+  @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold shadow-sm transition-all cursor-pointer whitespace-nowrap;
+  background: var(--brand-gradient);
+  color: var(--text-inverse);
+}
+
+.security-config-panel__btn-simular:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+}
+
+.security-config-panel__btn-simular:disabled {
+  @apply opacity-50 cursor-not-allowed transform-none;
+}
+
+.security-config-panel__switches {
+  @apply grid grid-cols-1 md:grid-cols-2 gap-4;
+}
+
+.security-toggle-card {
+  @apply flex items-center justify-between p-3.5 rounded-xl border transition-all;
+  background-color: var(--bg-subtle);
+  border-color: var(--border);
+}
+
+.security-toggle-card__text {
+  @apply flex flex-col pr-3;
+}
+
+.security-toggle-card__label {
+  @apply text-xs font-semibold;
+  color: var(--text-primary);
+}
+
+.security-toggle-card__sub {
+  @apply text-[11px] mt-0.5;
+  color: var(--text-muted);
+}
+
+.security-switch {
+  @apply relative inline-flex h-6 w-11 shrink-0 cursor-pointer rounded-full border-2 border-transparent transition-colors duration-200 ease-in-out focus:outline-none;
+  background-color: var(--border-strong);
+}
+
+.security-switch--active {
+  background-color: var(--brand-primary);
+}
+
+.security-switch__thumb {
+  @apply pointer-events-none inline-block h-5 w-5 transform rounded-full bg-white shadow-md ring-0 transition duration-200 ease-in-out;
+  transform: translateX(0);
+}
+
+.security-switch--active .security-switch__thumb {
+  transform: translateX(20px);
+}

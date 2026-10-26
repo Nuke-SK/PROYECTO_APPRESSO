@@ -1,0 +1,431 @@
+@reference "tailwindcss";
+
+/* ==========================================================================
+   Admin Dashboard — APPRESSO Light Theme
+   ========================================================================== */
+
+.admin-dashboard {
+  @apply space-y-8;
+}
+
+/* ─── Dashboard Header ─── */
+.admin-dashboard__header {
+  @apply space-y-1.5;
+}
+
+.admin-dashboard__title {
+  @apply text-2xl sm:text-3xl font-extrabold tracking-tight flex items-center gap-3;
+  color: var(--text-primary);
+}
+
+.admin-dashboard__title-icon {
+  @apply w-8 h-8 shrink-0;
+  color: var(--brand-primary);
+}
+
+.admin-dashboard__description {
+  @apply text-xs sm:text-sm;
+  color: var(--text-muted);
+}
+
+/* ─── Key Metrics Grid ─── */
+.admin-dashboard__metrics-grid {
+  @apply grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5;
+}
+
+/* Light Theme overrides for StatCard within Admin Dashboard */
+.admin-dashboard__metrics-grid > div {
+  background-color: var(--bg-white) !important;
+  border-color: var(--border) !important;
+  box-shadow: var(--shadow-sm) !important;
+  transition: all 0.2s ease;
+}
+
+.admin-dashboard__metrics-grid > div:hover {
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--border-hover) !important;
+}
+
+.admin-dashboard__metrics-grid > div p:first-child {
+  color: var(--text-muted) !important;
+}
+
+.admin-dashboard__metrics-grid > div p:nth-child(2) {
+  color: var(--text-primary) !important;
+}
+
+.admin-dashboard__metrics-grid > div p:last-child {
+  color: var(--text-muted) !important;
+}
+
+/* ─── Modules Navigation Grid ─── */
+.admin-dashboard__modules-grid {
+  @apply grid grid-cols-1 md:grid-cols-3 gap-6 pt-4;
+}
+
+/* ─── Module Card ─── */
+.admin-module-card {
+  @apply p-6 rounded-2xl flex flex-col justify-between transition-all duration-200;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-module-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.admin-module-card--products:hover {
+  border-color: var(--brand-primary-border);
+}
+
+.admin-module-card--categories:hover {
+  border-color: var(--brand-secondary-mid);
+}
+
+.admin-module-card--security:hover {
+  border-color: var(--status-error);
+}
+
+.admin-module-card__content {
+  @apply space-y-1;
+}
+
+/* Module Card Icon Wrapper */
+.admin-module-card__icon-wrapper {
+  @apply w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform duration-200;
+}
+
+.admin-module-card:hover .admin-module-card__icon-wrapper {
+  transform: scale(1.05);
+}
+
+.admin-module-card__icon-wrapper--products {
+  background-color: var(--brand-primary-bg);
+  border: 1px solid var(--brand-primary-border);
+  color: var(--brand-primary);
+}
+
+.admin-module-card__icon-wrapper--categories {
+  background-color: var(--brand-secondary-bg);
+  border: 1px solid var(--brand-secondary-pale);
+  color: var(--brand-secondary-mid);
+}
+
+.admin-module-card__icon-wrapper--security {
+  background-color: var(--status-error-bg);
+  border: 1px solid var(--status-error-border);
+  color: var(--status-error);
+}
+
+.admin-module-card__icon {
+  @apply w-6 h-6;
+}
+
+/* Module Card Titles and Texts */
+.admin-module-card__title {
+  @apply text-lg font-bold mb-1;
+  color: var(--text-primary);
+}
+
+.admin-module-card__description {
+  @apply text-xs leading-relaxed;
+  color: var(--text-secondary);
+}
+
+/* Module Card Links */
+.admin-module-card__link {
+  @apply mt-6 inline-flex items-center gap-2 text-xs font-bold transition-all duration-150;
+}
+
+.admin-module-card__link:hover {
+  gap: 0.625rem;
+}
+
+.admin-module-card__link--products {
+  color: var(--brand-primary);
+}
+
+.admin-module-card__link--products:hover {
+  color: var(--brand-primary-dark);
+}
+
+.admin-module-card__link--categories {
+  color: var(--brand-secondary-mid);
+}
+
+.admin-module-card__link--categories:hover {
+  color: var(--brand-secondary);
+}
+
+.admin-module-card__link--security {
+  color: var(--status-error);
+}
+
+.admin-module-card__link--security:hover {
+  color: #b91c1c;
+}
+
+.admin-module-card__link-text {
+  @apply inline;
+}
+
+.admin-module-card__link-icon {
+  @apply w-4 h-4 transition-transform duration-150;
+}
+
+.admin-module-card__link:hover .admin-module-card__link-icon {
+  transform: translateX(3px);
+}
+
+/* ─── Period Selector ─── */
+.admin-period-selector {
+  @apply flex items-center gap-1 p-1.5 rounded-xl border self-start md:self-auto;
+  background-color: var(--bg-subtle);
+  border-color: var(--border);
+}
+
+.admin-period-selector__btn {
+  @apply px-3 py-1.5 rounded-lg text-sm font-semibold transition-all;
+  color: var(--text-muted);
+}
+
+.admin-period-selector__btn:hover {
+  color: var(--brand-secondary);
+  background-color: var(--bg-hover);
+}
+
+.admin-period-selector__btn--active {
+  background-color: var(--brand-secondary);
+  color: var(--text-inverse);
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-period-selector__refresh {
+  @apply p-1.5 ml-1 rounded-lg transition-colors;
+  color: var(--text-muted);
+}
+
+.admin-period-selector__refresh:hover {
+  color: var(--brand-secondary);
+  background-color: var(--bg-hover);
+}
+
+/* ─── Analytics Panel ─── */
+.admin-analytics-panel {
+  @apply rounded-2xl p-5;
+  background-color: var(--bg-white);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-sm);
+}
+
+.admin-analytics-panel__title {
+  @apply text-base font-bold flex items-center gap-2 mb-4;
+  color: var(--text-primary);
+}
+
+.admin-analytics-panel__title-icon {
+  @apply w-5 h-5 shrink-0;
+  color: var(--brand-primary);
+}
+
+.admin-analytics-panel__title-icon--danger {
+  color: var(--status-error);
+}
+
+.admin-analytics-panel__desc {
+  @apply text-xs mt-0.5;
+  color: var(--text-muted);
+}
+
+.admin-analytics-panel__footer {
+  @apply mt-4 pt-3 border-t text-xs flex items-center gap-2;
+  border-color: var(--border);
+  color: var(--text-muted);
+}
+
+/* ─── Case Item ─── */
+.admin-case-item {
+  @apply p-3 rounded-xl border;
+  background-color: var(--bg-subtle);
+  border-color: var(--border);
+}
+
+.admin-case-item__header {
+  @apply flex justify-between items-center text-sm mb-1.5;
+}
+
+.admin-case-item__tipo {
+  @apply font-semibold;
+  color: var(--text-primary);
+}
+
+.admin-case-item__badge {
+  @apply font-mono text-xs font-bold;
+  color: var(--status-error);
+}
+
+.admin-case-item__bar-track {
+  @apply w-full h-2 rounded-full overflow-hidden;
+  background-color: var(--bg-muted);
+}
+
+.admin-case-item__bar-fill {
+  @apply h-full rounded-full;
+  background: var(--brand-gradient);
+}
+
+/* ─── Users Table ─── */
+.admin-users-table {
+  @apply w-full text-left text-sm;
+}
+
+.admin-users-table__head {
+  @apply uppercase tracking-wider text-xs font-semibold;
+  background-color: var(--bg-subtle);
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border);
+}
+
+.admin-users-table__th {
+  @apply px-3 py-2.5;
+}
+
+.admin-users-table__row {
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.15s ease-in-out;
+}
+
+.admin-users-table__row:hover {
+  background-color: var(--bg-hover);
+}
+
+.admin-users-table__td {
+  @apply px-3 py-2.5;
+  color: var(--text-secondary);
+}
+
+.admin-users-table__td--name {
+  @apply font-medium;
+  color: var(--text-primary);
+}
+
+.admin-users-table__td--email {
+  @apply font-mono text-xs;
+  color: var(--brand-secondary-mid);
+}
+
+.admin-users-table__td--tx {
+  @apply text-center font-bold;
+  color: var(--brand-primary);
+}
+
+.admin-users-table__anomaly-badge {
+  @apply px-2 py-0.5 rounded-full text-xs font-semibold border;
+  background-color: var(--status-error-bg);
+  border-color: var(--status-error-border);
+  color: var(--status-error);
+}
+
+/* ─── 24-Hour Heatmap ─── */
+.admin-heatmap {
+  @apply grid grid-cols-6 sm:grid-cols-12 md:grid-cols-24 gap-1.5 pt-2;
+}
+
+.admin-heatmap__cell {
+  @apply flex flex-col items-center justify-center p-2 rounded-xl border text-center transition-all hover:scale-105;
+  background-color: var(--bg-subtle);
+  border-color: var(--border);
+  color: var(--text-light);
+}
+
+.admin-heatmap__cell--tx {
+  background-color: var(--brand-secondary-bg);
+  border-color: var(--brand-secondary-pale);
+  color: var(--brand-secondary-mid);
+}
+
+.admin-heatmap__cell--anom {
+  background-color: var(--status-error-bg);
+  border-color: var(--status-error-border);
+  color: var(--status-error);
+  font-weight: 600;
+}
+
+.admin-heatmap__cell--anom-high {
+  background-color: var(--status-error);
+  border-color: #b91c1c;
+  color: var(--text-inverse);
+  font-weight: 700;
+}
+
+.admin-heatmap__cell-label {
+  @apply text-[10px] font-mono tracking-tight opacity-75;
+}
+
+.admin-heatmap__cell-value {
+  @apply text-xs font-bold my-0.5;
+}
+
+/* ─── Risk Level Item ─── */
+.admin-risk-item {
+  @apply p-3 rounded-xl border;
+  background-color: var(--bg-subtle);
+  border-color: var(--border);
+}
+
+.admin-risk-item__header {
+  @apply flex justify-between items-center text-sm mb-1.5;
+}
+
+.admin-risk-item__level--critico { color: var(--status-error); font-weight: 700; }
+.admin-risk-item__level--alto    { color: var(--status-warning); font-weight: 700; }
+.admin-risk-item__level--medio   { color: var(--brand-primary); font-weight: 700; }
+.admin-risk-item__level--bajo    { color: var(--status-success); font-weight: 700; }
+
+.admin-risk-item__count {
+  @apply font-mono text-xs;
+  color: var(--text-secondary);
+}
+
+.admin-risk-item__bar-track {
+  @apply w-full h-2 rounded-full overflow-hidden;
+  background-color: var(--bg-muted);
+}
+
+.admin-risk-item__bar--critico { height: 100%; border-radius: 9999px; background-color: var(--status-error); }
+.admin-risk-item__bar--alto    { height: 100%; border-radius: 9999px; background-color: var(--status-warning); }
+.admin-risk-item__bar--medio   { height: 100%; border-radius: 9999px; background-color: var(--brand-primary); }
+.admin-risk-item__bar--bajo    { height: 100%; border-radius: 9999px; background-color: var(--status-success); }
+
+/* ─── Payment Method Item ─── */
+.admin-payment-item {
+  @apply p-3 rounded-xl border flex justify-between items-center transition-colors;
+  background-color: var(--bg-subtle);
+  border-color: var(--border);
+}
+
+.admin-payment-item:hover {
+  border-color: var(--brand-primary-border);
+}
+
+.admin-payment-item__name {
+  @apply font-semibold block text-sm;
+  color: var(--text-primary);
+}
+
+.admin-payment-item__total {
+  @apply text-xs;
+  color: var(--text-muted);
+}
+
+.admin-payment-item__anomaly {
+  @apply font-mono text-xs font-bold block text-right;
+  color: var(--status-error);
+}
+
+.admin-payment-item__rate {
+  @apply text-[10px] text-right;
+  color: var(--text-light);
+}

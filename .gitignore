@@ -1,0 +1,25 @@
+# Dependencias
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Compilados
+dist/
+build/
+
+# Variables de entorno con credenciales
+.env
+.env.local
+*.env
+
+# Cache y temporales
+.drizzle/
+.turbo/
+
+# Logs y registros
+logs/
+app.log
+
+# Herramientas descargadas localmente
+ngrok.exe
